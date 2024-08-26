@@ -8,7 +8,7 @@
 • Responsive Design  <br>
 
 ## Screenshots 📱
-<img src="/src/images/Sneakers-1.png" width="200"><img src="/src/images/Sneakers-2.png" width="200"><img src="/src/images/Sneakers-3.png" width="200"><img src="/src/images/Sneakers-4.png" width="200"><img src="/src/images/Sneakers-5.png" width="200">
+<img src="/src/images/Sneakers-1.png" width="100"><img src="/src/images/Sneakers-2.png" width="100"><img src="/src/images/Sneakers-3.png" width="100"><img src="/src/images/Sneakers-4.png" width="100"><img src="/src/images/Sneakers-5.png" width="100">
 
 
 ## 💻 Tech Stack
