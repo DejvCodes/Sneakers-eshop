@@ -1,0 +1,59 @@
+section.shopping-bag {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+section.shopping-bag .container {
+  width: 100%;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+section.shopping-bag .container .shopping-bag-box {
+  width: 100%;
+  margin-bottom: 50px;
+}
+section.shopping-bag .container .shopping-bag-box h2.empty {
+  font-size: 16px;
+  font-weight: 500;
+  text-align: left;
+  margin-bottom: 10px;
+}
+section.shopping-bag .container .shopping-bag-box .back-price {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 10px; 
+}
+section.shopping-bag .container .shopping-bag-box .back-price .back-in-cart {
+  font-size: 14px;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  text-transform: uppercase;
+  gap: 5px;
+}
+section.shopping-bag .container .shopping-bag-box .back-price .back-in-cart svg {
+  transition: transform 0.25s linear;
+}
+section.shopping-bag .container .shopping-bag-box .back-price .back-in-cart:hover svg {
+  transform: translateX(-3px);
+}
+section.shopping-bag .container .shopping-bag-box .back-price h2.total-price {
+  font-size: 14px;
+  font-weight: 500;
+  text-transform: uppercase;
+}
+
+/* ------- Responsive Design ------- */
+@media screen and (max-width: 330px) {
+  section.shopping-bag .container .shopping-bag-box .back-price .back-in-cart {
+    font-size: 12px;
+  }
+  section.shopping-bag .container .shopping-bag-box .back-price h2.total-price {
+    font-size: 12px;
+  }
+}

@@ -1,0 +1,94 @@
+.club,
+.vip {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 110px 0 50px 0;
+}
+.vip {
+  background: black;
+  margin: 110px 0 0 0;
+}
+.club .container,
+.vip .container {
+  width: 100%;
+  text-align: center;
+}
+.club .container .benefits,
+.vip .container .vip-member {
+  width: 100%;
+}
+.vip-member {
+  margin: 80px 0;
+}
+h2.section-title {
+  font-size: 26px;
+  font-weight: 500;
+  text-transform: uppercase;
+  margin-bottom: 40px;
+}
+.vip-member h2.section-title {
+  color: #fff;
+  margin-bottom: 10px;
+}
+h3.subtitle {
+  color: #c8c8c8;;
+  font-size: 14px;
+  font-weight: 500;
+  margin-bottom: 30px;
+}
+.all-benefits-club,
+.all-benefits-vip {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  justify-items: center;
+  column-gap: 50px;
+  row-gap: 40px;
+}
+.vip-member button {
+  color: #fff;
+  font-size: 14px;
+  font-weight: 500;
+  letter-spacing: 1px;
+  border: 1px solid #fff;
+  text-transform: uppercase;
+  transition: all 0.25s linear;
+  margin-top: 40px;
+  padding: 10px 40px;
+  cursor: pointer;
+}
+.vip-member button:hover {
+  color: black;
+  background: #fff;
+} 
+
+/* ------- Responsive Design ------- */
+@media screen and (max-width: 1250px) {
+  .all-benefits-club,
+  .all-benefits-vip {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    justify-items: center;
+    column-gap: 50px;
+    row-gap: 40px;
+  }
+}
+@media screen and (max-width: 670px) {
+  .club {
+    margin: 110px 0 40px 0;
+  }
+  .vip {
+    margin: 70px 0 0 0;
+  }
+  h2.section-title {
+    font-size: 20px;
+    margin: 0 10px 15px 10px;
+  }
+  .all-benefits-club,
+  .all-benefits-vip {
+    grid-template-columns: repeat(1, 1fr);
+    row-gap: 30px;
+  }
+}

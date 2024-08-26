@@ -1,0 +1,210 @@
+section.product-details {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+section.product-details .container {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+a.back {
+  position: absolute;
+  font-size: 14px;
+  font-weight: 500;
+  top: 110px;
+  left: 2px;
+  text-transform: uppercase;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+a.back svg {
+  transition: transform 0.25s linear;
+}
+a.back:hover svg {
+  transform: translateX(-3px);
+}
+.product-details-box {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  border: 1px solid rgba(0, 0, 0, 0.25);
+  gap: 55px;
+  padding: 55px;
+  margin: 140px 0 50px 0;
+}
+.product-details-box .all-images .main-image {
+  width: 100%;
+}
+.product-details-box .all-images .main-image img {
+  width: 470px;
+  height: 300px;
+  object-fit: cover;
+}
+.product-details-box .all-images .more-images {
+  width: 450px;
+  height: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.product-details-box .all-images .more-images img {
+  width: 140px;
+  height: 100%;
+}
+.product-details-box .more-information {
+  text-transform: uppercase;
+}
+.product-details-box .more-information p.brand {
+  font-size: 19px;
+  font-weight: 600;
+  letter-spacing: 1px;
+  margin-bottom: 7px;
+}
+.product-details-box .more-information h2.name {
+  font-size: 26px;
+  font-weight: 500;
+  letter-spacing: 2px;
+  margin-bottom: 5px;
+}
+.product-details-box .more-information p.type {
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+.product-details-box .more-information p.price {
+  font-size: 16px;
+  margin-bottom: 15px;
+}
+.product-details-box .more-information p.info {
+  font-size: 14px;
+  line-height: 19px;
+  margin-bottom: 15px;
+}
+.product-details-box .more-information .season {
+  font-size: 12px;
+  margin-bottom: 5px;
+}
+.product-details-box .more-information p.product-code {
+  font-size: 12px;
+  margin-bottom: 20px;
+}
+.product-details-box .more-information .buttons {
+  display: flex;
+  align-items: center;
+}
+.product-details-box .more-information .buttons span {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 5px 4px 5px;
+}
+.product-details-box .more-information .buttons button.minus svg,
+.product-details-box .more-information .buttons button.plus svg {
+  font-size: 26px;
+  cursor: pointer;
+}
+.product-details-box .more-information .buttons .add-to-cart {
+  font-size: 12px;
+  border: 1px solid rgba(0, 0, 0.7);
+  border-radius: 3px;
+  transition: all 0.25s linear;
+  margin: 0 0 4px 10px;
+  padding: 2px 10px;
+  cursor: pointer;
+}
+.product-details-box .more-information .buttons .add-to-cart:hover {
+  background: rgba(154, 154, 154, 0.3);
+}
+
+/* ------- Responsive Design ------- */
+@media screen and (max-width: 1150px) {
+  .product-details-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 55px;
+  }
+  .product-details-box .all-images .main-image img {
+    width: 500px;
+    height: 350px;
+  }
+  .product-details-box .all-images .more-images {
+    width: 500px;
+    height: 120px;
+  }
+  .product-details-box .all-images .more-images img {
+    width: 150px;
+    height: 100%;
+  }
+  .product-details-box .more-information .buttons {
+    justify-content: center;
+  }
+}
+@media screen and (max-width: 670px) {
+  a.back {
+    top: 90px;
+  }
+  .product-details-box {
+    gap: 15px;
+    padding: 20px;
+    margin: 120px 0 60px 0;
+  }
+  .product-details-box .all-images .main-image img {
+    width: 250px;
+    height: 120px;
+  }
+  .product-details-box .all-images .more-images {
+    width: 240px;
+    height: 65px;
+  }
+  .product-details-box .all-images .more-images img {
+    width: 80px;
+    height: 100%;
+  }
+}
+@media screen and (max-width: 550px) {
+  a.back {
+    gap: 5px;
+  }
+  .product-details-box .more-information p.brand {
+    font-size: 14px;
+    letter-spacing: 0;
+    margin-bottom: 2px;
+  }
+  .product-details-box .more-information h2.name {
+    font-size: 18px;
+    letter-spacing: 1px;
+    margin-bottom: 3px;
+  }
+  .product-details-box .more-information p.type {
+    font-size: 12px;
+  }
+  .product-details-box .more-information p.price {
+    font-size: 14px;
+    margin-bottom: 10px;
+  }
+  .product-details-box .more-information p.info {
+    text-align: justify;
+    font-size: 11px;
+    line-height: 15px;
+    margin-bottom: 20px;
+  }
+  .product-details-box .more-information .season {
+    display: none;
+  }
+  .product-details-box .more-information p.product-code {
+    display: none;
+  }
+  .product-details-box .more-information .buttons button.minus svg,
+  .product-details-box .more-information .buttons button.plus svg {
+    font-size: 24px;
+  }
+  .product-details-box .more-information .buttons .add-to-cart {
+    font-size: 11px;
+  }
+}
