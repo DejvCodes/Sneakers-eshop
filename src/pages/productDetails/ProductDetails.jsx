@@ -6,7 +6,7 @@ import { useEffect, useState } from "react"
 import { useDispatch } from "react-redux"
 import { CiSquareMinus, CiSquarePlus } from "react-icons/ci";
 import { FaArrowLeftLong } from "react-icons/fa6";
-import { addToShoppingBag, showNotification, hideNotification } from "../../stores/shoppingBag"
+import { addToShoppingBag, showNotification, hideNotification } from "../../store/shoppingBag"
 
 const ProductDetails = () => {
   const { slug } = useParams()

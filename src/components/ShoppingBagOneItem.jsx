@@ -6,7 +6,7 @@ import { RxCross2 } from "react-icons/rx";
 import { Link } from "react-router-dom";
 import { useState, useEffect } from "react"
 import { useDispatch } from "react-redux";
-import { changeQuantity, deleteProduct } from "../stores/shoppingBag";
+import { changeQuantity, deleteProduct } from "../store/shoppingBag";
 
 const ShoppingBagOneItem = ({ productId, quantity }) => {
   const dispatch = useDispatch()

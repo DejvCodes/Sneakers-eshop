@@ -4,7 +4,7 @@ import PropTypes from "prop-types"
 import { Link } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { LuShoppingBag } from "react-icons/lu";
-import { addToShoppingBag, showNotification, hideNotification } from "../stores/shoppingBag";
+import { addToShoppingBag, showNotification, hideNotification } from "../store/shoppingBag";
 
 const ProductCard = ({ id, fullName, price, image, slug }) => {
   const dispatch = useDispatch()
