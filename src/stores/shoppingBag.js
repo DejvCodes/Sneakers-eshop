@@ -7,52 +7,56 @@ const initialState = {
 }
 
 const shoppingBagSlice = createSlice({
-  name: 'shoppingBag', // Prefix při vytváření názvů akcí
-  initialState, // Počáteční stav
+  name: 'shoppingBag', // Název slice, bude sloužit jako prefix při generování názvů akcí
+  initialState, // Definice počátečního stavu
   reducers: {
     addToShoppingBag(state, action) {
-      const {productId, quantity} = action.payload
-      // Hledání produktu v poli 'items' podle productId
-      const indexProductId = (state.items).findIndex((item) => {
-        return item.productId === productId
-      })
-      if (indexProductId >= 0) {
-        // Pokud produkt existuje, zvýšíme jeho množství
-        state.items[indexProductId].quantity += quantity
+      const { productId, quantity } = action.payload
+
+      // Hledání, zda produkt s daným productId již existuje
+      const existingProduct = state.items.find((item) => item.productId === productId)
+
+      if (existingProduct) {
+        // Pokud produkt existuje, zvýší jeho množství o přidané quantity
+        existingProduct.quantity += quantity
       } else {
-        state.items.push({productId, quantity})
+        // Pokud produkt neexistuje, přidá jej do košíku
+        state.items.push({ productId, quantity })
       }
     },
     changeQuantity(state, action) {
-      const {productId, quantity} = action.payload
-      const indexProductId = (state.items).findIndex((item) => {
-        return item.productId === productId
-      })
+      const { productId, quantity } = action.payload
+
+      // Hledání produktu podle productId
+      const existingProduct = state.items.find((item) => item.productId === productId)
+
       if (quantity > 0) {
-        state.items[indexProductId].quantity = quantity
+        // Pokud je nové množství větší než 0, aktualizuje se
+        existingProduct.quantity = quantity
       } else {
-        // delete state.items[indexProductId]
-        state.items = (state.items).filter(item => item.productId !== productId)
+        // Pokud je nové množství 0 nebo méně, odstraní se
+        state.items = state.items.filter((item) => item.productId !== productId)
       }
     },
     deleteProduct(state, action) {
-      const {productId} = action.payload
-      const indexProductId = (state.items).findIndex((item) => {
-        return item.productId === productId
-      })      
-      if (indexProductId !== -1) {
-        state.items = (state.items).filter(item => item.productId !== productId)
-      }
+      const { productId } = action.payload
+
+      // Odstranění produktu z košíku na základě productId
+      state.items = state.items.filter((item) => item.productId !== productId)
     },
-    // Notifikace
+    // Notifikace pro zobrazení
     showNotification(state) {
       state.notification = true;
     },
+    // Notifikace pro skrytí
     hideNotification(state) {
       state.notification = false;
     }
   },
 })
 
-export const {addToShoppingBag, changeQuantity, deleteProduct, showNotification, hideNotification} = shoppingBagSlice.actions
+// Exportování akcí generovaných slice
+export const { addToShoppingBag, changeQuantity, deleteProduct, showNotification, hideNotification } = shoppingBagSlice.actions
+
+// Exportování reduktoru slice, který bude přidán do hlavního Redux store
 export default shoppingBagSlice.reducer
