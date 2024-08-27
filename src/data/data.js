@@ -214,7 +214,7 @@ export const products = [
     fullName: "Campus 00s Green Cloud White",
     name: "Campus 00s",
     type: "Green Cloud White",
-    price: 3240 ,
+    price: 3240,
     image: "https://cdn.myshoptet.com/usr/www.sneakerstore.cz/user/shop/big/3337-1_adidas-campus-00s-wmns-green-cloud-white-20582297-45674143-2048.png?662f68c5",
     images: [
       "https://cdn.myshoptet.com/usr/www.sneakerstore.cz/user/shop/big/3337_adidas-campus-00s-wmns-green-cloud-white-20582297-45673527-2048.png?662f68c4",

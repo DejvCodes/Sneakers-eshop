@@ -27,7 +27,7 @@ const Membership = () => {
               Staň se VIP členem Sneakers Club
             </h2>
             <h3 className="subtitle">
-                Exkluzivní výhody VIP členství Sneakers Club
+              Exkluzivní výhody VIP členství Sneakers Club
             </h3>
             <div className="all-benefits-vip">
               {benefitsVip.map((item, index) => {

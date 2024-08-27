@@ -27,10 +27,12 @@ const Header = () => {
 
   return (
     <>
-      {notification && <div className="notification">
-        <h2>Přidáno do košíku</h2>
-      </div>}
-      
+      {notification &&
+        <div className="notification">
+          <h2>Přidáno do košíku</h2>
+        </div>
+      }
+
       <header className="header">
         <div className="container">
           <div className="logo" onClick={() => setOpenMenu(false)}>
@@ -51,7 +53,7 @@ const Header = () => {
             <Link to="/shopping-bag" className="bag">
               <LuShoppingBag /><span>{totalQuantity}</span>
             </Link>
-            <div className="burger-menu"  onClick={() => handleOpenMenu()}>
+            <div className="burger-menu" onClick={() => handleOpenMenu()}>
               <div className={openMenu ? "line1" : ""}></div>
               <div className={openMenu ? "line2" : ""}></div>
               <div className={openMenu ? "line3" : ""}></div>

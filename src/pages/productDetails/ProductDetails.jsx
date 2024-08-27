@@ -6,10 +6,10 @@ import { useEffect, useState } from "react"
 import { useDispatch } from "react-redux"
 import { CiSquareMinus, CiSquarePlus } from "react-icons/ci";
 import { FaArrowLeftLong } from "react-icons/fa6";
-import { addToShoppingBag, showNotification, hideNotification} from "../../stores/shoppingBag"
+import { addToShoppingBag, showNotification, hideNotification } from "../../stores/shoppingBag"
 
 const ProductDetails = () => {
-  const {slug} = useParams()
+  const { slug } = useParams()
   const dispatch = useDispatch()
   const [quantity, setQuantity] = useState(1)
   const [productDetails, setProductDetails] = useState()
@@ -30,9 +30,9 @@ const ProductDetails = () => {
   if (!productDetails) {
     return <div>Loading...</div>;
   }
-  
+
   // Destructuring
-  const {id, name, brand, type, price, image, images, season, info, productCode } = productDetails
+  const { id, name, brand, type, price, image, images, season, info, productCode } = productDetails
 
   // Funkce pro snížení množství (minimální množství je 1)
   const handleMinusQuantity = () => {
@@ -46,19 +46,14 @@ const ProductDetails = () => {
 
   // Funkce pro přidání produktu do košíku
   const handleAddToBag = () => {
-    // Odeslání akce addToShoppingBag
     dispatch(addToShoppingBag({
       productId: id,
       quantity: quantity,
     }))
-
-    // Odeslání akce showNotification
-    dispatch(showNotification()); 
+    dispatch(showNotification());
     setTimeout(() => {
-     // Odeslání akce hideNotification
       dispatch(hideNotification());
     }, 1500);
-    
     // Nastavení množství 
     setQuantity(1)
   }
@@ -70,11 +65,11 @@ const ProductDetails = () => {
           <div className="product-details-box">
             <div className="all-images">
               <div className="main-image">
-                <img src={image} alt={slug} /> 
+                <img src={image} alt={slug} />
               </div>
               <div className="more-images">
                 {images.map((oneImg, index) => {
-                  return <img src={oneImg} alt={`{${name} - obrázek ${index + 1}}`} key={index}/>
+                  return <img src={oneImg} alt={`{${name} - obrázek ${index + 1}}`} key={index} />
                 })}
               </div>
             </div>

@@ -35,7 +35,7 @@ const ShoppingBag = () => {
                 return <ShoppingBagOneItem key={index} {...oneItem} />
               })}
             </div>
-            {price ? "" : <h2 className="empty">Košík je prázdný</h2> }
+            {price ? "" : <h2 className="empty">Košík je prázdný</h2>}
             <hr />
             <div className="back-price">
               <Link to="/" className="back-in-cart"><FaArrowLeftLong /> zpět</Link>

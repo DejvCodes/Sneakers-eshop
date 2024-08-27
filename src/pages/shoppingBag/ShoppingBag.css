@@ -16,6 +16,9 @@ section.shopping-bag .container .shopping-bag-box {
   width: 100%;
   margin-bottom: 50px;
 }
+section.shopping-bag .container .shopping-bag-box .shopping-bag-items {
+  margin-top: 70px;
+}
 section.shopping-bag .container .shopping-bag-box h2.empty {
   font-size: 16px;
   font-weight: 500;

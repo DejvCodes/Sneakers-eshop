@@ -8,7 +8,7 @@ import { useState, useEffect } from "react"
 import { useDispatch } from "react-redux";
 import { changeQuantity, deleteProduct } from "../stores/shoppingBag";
 
-const ShoppingBagOneItem = ({productId, quantity}) => {
+const ShoppingBagOneItem = ({ productId, quantity }) => {
   const dispatch = useDispatch()
   const [oneProductDetail, setOneProductDetail] = useState([])
 
@@ -22,7 +22,6 @@ const ShoppingBagOneItem = ({productId, quantity}) => {
 
   // Funkce pro snížení množství
   const handleMinusQuantity = () => {
-    // Odeslání akce changeQuantity
     dispatch(changeQuantity({
       productId: productId,
       quantity: quantity - 1,
@@ -31,16 +30,14 @@ const ShoppingBagOneItem = ({productId, quantity}) => {
 
   // Funkce pro zvýšení množství
   const handlePlusQuantity = () => {
-    // Odeslání akce changeQuantity
     dispatch(changeQuantity({
       productId: productId,
       quantity: quantity + 1,
-   }))
+    }))
   }
 
   // Funkce pro vymazání produktu z košíku
   const handleDeleteProduct = () => {
-    // Odeslání akce deleteProduct
     dispatch(deleteProduct({
       productId: productId,
     }))
@@ -52,7 +49,7 @@ const ShoppingBagOneItem = ({productId, quantity}) => {
         <div className="left-side">
           <button className="delete-product" onClick={handleDeleteProduct}><RxCross2 /></button>
           <Link to={`/${oneProductDetail.slug}`}>
-            <img src={oneProductDetail.image} alt={oneProductDetail.slug}/>
+            <img src={oneProductDetail.image} alt={oneProductDetail.slug} />
           </Link>
           <p>{oneProductDetail.fullName}</p>
         </div>

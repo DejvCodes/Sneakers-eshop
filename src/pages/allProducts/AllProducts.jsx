@@ -7,7 +7,7 @@ import ProductCard from "../../components/ProductCard"
 const AllProducts = () => {
   const [searchingProduct, setSearchingProduct] = useState("")
   const [filteredProducts, setFilteredProducts] = useState([])
- 
+
   // Vyhledání produktů podle fullName zadaného v inputu
   useEffect(() => {
     const productsAfterFilter = products.filter((oneProduct) => {
@@ -17,26 +17,26 @@ const AllProducts = () => {
   }, [searchingProduct])
 
   return (
-   <>
-    <section className="products">
-      <div className="container">
-        <div className="search">
-          <input 
-            type="text" 
-            placeholder="Vyhledat produkt ..."
-            value={searchingProduct}
-            onChange={(e) => setSearchingProduct(e.target.value)}
-          />
-          <LuSearch />
+    <>
+      <section className="products">
+        <div className="container">
+          <div className="search">
+            <input
+              type="text"
+              placeholder="Vyhledat produkt ..."
+              value={searchingProduct}
+              onChange={(e) => setSearchingProduct(e.target.value)}
+            />
+            <LuSearch />
+          </div>
+          <div className="all-products">
+            {filteredProducts.map((oneProduct) => {
+              return <ProductCard key={oneProduct.id} {...oneProduct} />
+            })}
+          </div>
         </div>
-        <div className="all-products">
-          {filteredProducts.map((oneProduct, index) => {
-            return <ProductCard key={index} {...oneProduct} />
-          })}
-        </div>
-      </div>
-    </section>
-   </>
+      </section>
+    </>
   )
 }
 
