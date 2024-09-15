@@ -20,10 +20,10 @@ const ShoppingBag = () => {
       if (product) {
         return num + product.price * item.quantity
       }
-      return totalPrice
+      return num
     }, 0)
     setPrice(totalPrice)
-  }, [shoppingBag, price])
+  }, [shoppingBag, products])
 
   return (
     <>
