@@ -1,5 +1,6 @@
 import "./ShoppingBagOneItem.css"
 import formatPrice from "../function/FormatPrice"
+import PropTypes from "prop-types";
 import { products } from "../data/data"
 import { CiSquareMinus, CiSquarePlus } from "react-icons/ci";
 import { RxCross2 } from "react-icons/rx";
@@ -14,10 +15,10 @@ const ShoppingBagOneItem = ({ productId, quantity }) => {
 
   // Vyhledání produktu podle ID a nastavení detailů
   useEffect(() => {
-    const findProduct = products.filter((oneProduct) => {
+    const findProduct = products.find((oneProduct) => {
       return oneProduct.id === productId
     })
-    setOneProductDetail(findProduct[0])
+    setOneProductDetail(findProduct)
   }, [productId])
 
   // Funkce pro snížení množství
@@ -65,6 +66,12 @@ const ShoppingBagOneItem = ({ productId, quantity }) => {
       </div>
     </>
   )
+}
+
+// Validace props
+ShoppingBagOneItem.propTypes = {
+  productId: PropTypes.number.isRequired,
+  quantity: PropTypes.number.isRequired,
 }
 
 export default ShoppingBagOneItem

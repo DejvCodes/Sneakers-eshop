@@ -13,17 +13,17 @@ const ShoppingBag = () => {
 
   // Výpočet celkové ceny
   useEffect(() => {
-    const totalPrice = shoppingBag.reduce((num, item) => {
+    const totalPrice = shoppingBag.reduce((acc, item) => {
       const product = products.find((oneItem) => {
         return oneItem.id === item.productId
       })
       if (product) {
-        return num + product.price * item.quantity
+        return acc + product.price * item.quantity
       }
-      return num
+      return acc
     }, 0)
     setPrice(totalPrice)
-  }, [shoppingBag, products])
+  }, [shoppingBag])
 
   return (
     <>

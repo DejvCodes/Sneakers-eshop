@@ -27,7 +27,7 @@ const shoppingBagSlice = createSlice({
     changeQuantity(state, action) {
       const { productId, quantity } = action.payload
 
-      // Hledání produktu podle productId
+      // Hledání, zda produkt s daným productId již existuje
       const existingProduct = state.items.find((item) => item.productId === productId)
 
       if (quantity > 0) {
@@ -40,7 +40,6 @@ const shoppingBagSlice = createSlice({
     },
     deleteProduct(state, action) {
       const { productId } = action.payload
-
       // Odstranění produktu z košíku na základě productId
       state.items = state.items.filter((item) => item.productId !== productId)
     },

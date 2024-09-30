@@ -11,12 +11,9 @@ const Header = () => {
   const shoppingBag = useSelector(store => store.shoppingBag.items)
   const notification = useSelector(store => store.shoppingBag.notification)
 
-  // Nastavení množství v košíku (v headeru)
+  // Nastavení množství v košíku
   useEffect(() => {
-    let total = 0
-    shoppingBag.forEach(element => {
-      total += element.quantity
-    });
+    const total = shoppingBag.reduce((acc, item) => acc + item.quantity, 0);
     setTotalQuantity(total)
   }, [shoppingBag])
 
@@ -53,7 +50,7 @@ const Header = () => {
             <Link to="/shopping-bag" className="bag">
               <LuShoppingBag /><span>{totalQuantity}</span>
             </Link>
-            <div className="burger-menu" onClick={() => handleOpenMenu()}>
+            <div className="burger-menu" onClick={handleOpenMenu}>
               <div className={openMenu ? "line1" : ""}></div>
               <div className={openMenu ? "line2" : ""}></div>
               <div className={openMenu ? "line3" : ""}></div>

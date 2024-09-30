@@ -9,13 +9,16 @@ import { addToShoppingBag, showNotification, hideNotification } from "../store/s
 const ProductCard = ({ id, fullName, price, image, slug }) => {
   const dispatch = useDispatch()
 
-  // Funkce pro přidání produktu do košíku
+  // Funkce pro přidání produktu do košíku a zobrazení notifikace
   const handleAddToBag = () => {
+    // Přidání produktu do košíku s daným ID a množstvím 1
     dispatch(addToShoppingBag({
       productId: id,
       quantity: 1,
     }))
+    // Zobrazení notifikace, že byl produkt přidán do košíku
     dispatch(showNotification());
+    // Skrytí notifikace po 1,5 sekundě
     setTimeout(() => {
       dispatch(hideNotification());
     }, 1500);
