@@ -4,7 +4,7 @@
 • React-Redux - Provider, useSelector, useDispatch <br>
 • BrowserRouter, Routes, Route, Link, useParams <br>
 • PropTypes <br>
-• Product Search 🔎  <br>
+• Product Search <br>
 • Responsive Design  <br>
 
 ## Screenshots 📱
