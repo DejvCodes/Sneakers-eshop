@@ -1,7 +1,7 @@
 ## Sneakers E-shop
 
 • useState, useEffect <br>
-• Provider, useSelector, useDispatch <br>
+• React-Redux - Provider, useSelector, useDispatch <br>
 • BrowserRouter, Routes, Route, Link, useParams <br>
 • PropTypes <br>
 • Product Search 🔎  <br>
